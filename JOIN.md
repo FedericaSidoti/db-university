@@ -10,6 +10,11 @@ Neuroscienze
     - FROM `degrees` INNER JOIN `departments` ON `departments`.`id`= `degrees`.`department_id` 
     - WHERE department_id = 7 AND `degrees`.`level` = 'magistrale';
 3. Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
+    - SELECT `teacher_id` AS 'Fulvio_Amato_id', `courses`.`name`
+    - FROM `course_teacher`
+    - INNER JOIN `courses`
+    - ON `course_teacher`.`course_id` = `courses`.`id`
+    - WHERE `course_teacher`.`teacher_id`=44;
 4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui
 sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e
 nome
